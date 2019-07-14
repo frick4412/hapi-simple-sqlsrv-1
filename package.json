@@ -1,0 +1,20 @@
+{
+  "name": "hapi-storedash",
+  "version": "1.0.0",
+  "description": "store dashboard app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven Crombie",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.1",
+    "@hapi/joi": "^15.1.0",
+    "@hapi/vision": "^5.5.2",
+    "hbs": "^4.0.4",
+    "mdbootstrap": "^4.8.5",
+    "mssql": "^5.1.0"
+  }
+}
