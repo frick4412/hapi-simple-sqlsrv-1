@@ -1,0 +1,12 @@
+- Add query with variables
+- Separate routes for API versus pages (?)
+- Create template for using javascript and jQuery (like Order Management?)
+- Column sorting on table with addon (?)
+- Use of Moment 
+- Use of Accounting.js
+
+- Markup js versus handlebars
+- Use https
+- Use authentication (?)  JWT(?)  Cookie(?) ---> Central authentication app using cookies!
+
+- Using with Webpack

@@ -1,0 +1,21 @@
+// simple query with parameter
+server.route({
+    method: 'GET',
+    path: '/book/{id}',
+    handler: (request, h) => {
+        var id = encodeURI(request.params.id)
+        var result = (async function () {
+            try {
+                let result = await pool.request()
+                .input("id", sql.Int, id)
+                .query("select * from books where Id = @id")
+                return result
+            } catch (err) {
+                // ... error checks
+                console.log('Error 3', err)
+                return err
+            }
+        })();
+        return result;
+    }
+});

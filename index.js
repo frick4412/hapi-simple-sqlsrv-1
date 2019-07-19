@@ -138,12 +138,43 @@ const init = async () => {
         }
     });
 
+    // Database Query with Parameter
+    server.route({
+        method: 'GET',
+        path: '/user/{id}',
+        handler: (request, h) => {
+            var id = encodeURI(request.params.id);
+            console.log(id);
+            var result = (async function() {
+                try {
+                    let result = await apipool.request()
+                    .input("id", sql.Int, id)
+                    .query("select FirstName, LastName from Users where Id = @id");
+                    return result;
+                } catch (err) {
+                    console.log('Error', err)
+                    return err
+                }
+            })();
+            return result;
+        }
+    });
+
     // Using a View
     server.route({
         method: 'GET',
         path: '/testview',
         handler: (request, h) => {
             return h.view('index');
+        }
+    });
+
+    // Using a View2
+    server.route({
+        method: 'GET',
+        path: '/testview2',
+        handler: (request, h) => {
+            return h.view('view2');
         }
     });
 
